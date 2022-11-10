@@ -1,0 +1,6 @@
+---
+upgrade:
+  - |
+    Setting a new service in :class:`.ExperimentData` will no longer raise
+    an exception in case a service exists, unless the parameter `replace` is
+    `False`.
