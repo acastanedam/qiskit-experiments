@@ -79,6 +79,7 @@ extensions = [
     "autodoc_analysis",
     "autodoc_visualization",
     "jupyter_execute_custom",
+    "sphinxcontrib.jupyter",
 ]
 
 html_static_path = ["_static"]
@@ -259,3 +260,35 @@ def maybe_skip_member(app, what, name, obj, skip, options):
     if not skip:
         return (name in skip_names or obj in skip_members) and what == "attribute"
     return skip
+
+
+jupyter_kernels = {
+    "python3": {
+        "kernelspec": {"display_name": "Python", "language": "python3", "name": "python3"},
+        "file_extension": ".py",
+    },
+    "python2": {
+        "kernelspec": {"display_name": "Python", "language": "python2", "name": "python2"},
+        "file_extension": ".py",
+    },
+    "julia-1.1": {
+        "kernelspec": {"display_name": "Julia 1.1", "language": "julia", "name": "julia-1.1"},
+        "file_extension": ".jl",
+    },
+}
+
+jupyter_conversion_mode = "all"
+
+jupyter_headers = {
+    "python3": [
+        # nbformat.v4.new_code_cell("%autosave 0")      #@mmcky please make this an option
+    ],
+    "julia": [],
+}
+
+# Execute skip-test code blocks for rendering of website (this will need to be ignored in coverage testing)
+jupyter_ignore_skip_test = True
+
+jupyter_execute_notebooks = False
+
+jupyter_images_markdown = True

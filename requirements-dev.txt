@@ -21,3 +21,4 @@ pylatexenc
 importlib-metadata==4.13.0;python_version<'3.8'
 scikit-learn
 sphinx-copybutton
+sphinxcontrib-jupyter
